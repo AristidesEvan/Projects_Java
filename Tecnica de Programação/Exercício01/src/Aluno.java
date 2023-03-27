@@ -22,20 +22,16 @@ public class Aluno {
         
     }
 
-    public String getNome() {
+    public String getNome () {
         return this.nome;
     }
-
-    public int getIdade() {
+    public int getIdade () {
         return this.idade;
     }
-
-    public int getMatricula() {
+    public int getMatricula () {
         return this.matricula;
     }
-
-    public String getTurma() {
+    public String getTurma () {
         return this.turma;
     }
-
-}
+} 
