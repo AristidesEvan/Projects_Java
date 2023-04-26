@@ -21,7 +21,7 @@ public class ListaEncadeada {
         No no = this.primeiro;
         while (no != null) {
             if (no.getItem().getDescricao() == item.getDescricao()) {
-                aux = no.getNo();
+                aux = no;
                 this.primeiro = no.getNo();
                 return aux.getItem();
             }
@@ -38,7 +38,7 @@ public class ListaEncadeada {
     public ItemCompra buscar(String descricao) {
         No no = this.primeiro;
         while (no != null) {
-            if(no.getItem().getDescricao() == descricao) {
+            if(no.getItem().getDescricao().equals(descricao)) {
                 return no.getItem();
             }
             no = no.getNo();
