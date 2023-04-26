@@ -1,18 +1,7 @@
-## Getting Started
+## Exercício 06
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Tem-se  uma  estrada  ligando  várias  cidades.  Cada  cidade  tem  seu  marco quilométrico.  Fazer um programaque:  a)leia  vários  pares de  dados,  contendo cada  par  os  valores  dos  marcos  quilométricos,  em  ordem  crescente,  de  duas cidades.  O  último  par  contém  estes  dois  valores  iguais.  b)  Calcule  os  tempos decorridos  para  percorrer  a  distância  entre  estas  duas  cidades,  com  as seguintes  velocidades:  20,  30,  40,  50,  60,  70  e80  km/hora,  sabendo-se  que 
 
-## Folder Structure
+t = e/t
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+onde  t  =  tempo;  e  =  espaço  e  v  =  velocidade.  Escreva  os  marcos quilométricos, a velocidade e o tempo decorrido entre as duas cidades apenas quando este tempo for superior a 2 horas.

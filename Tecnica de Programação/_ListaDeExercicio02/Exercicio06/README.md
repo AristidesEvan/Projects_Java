@@ -1,18 +1,17 @@
-## Getting Started
+## Exercício 06
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Considereaseguintelinhadedadosbancáriosdeumarquivoderetornodepagamentode boletobancário: 10423547000003587253007202202082022 Sendoquesetemnasequência,asseguintesinformações:
 
-## Folder Structure
+Banco(3 casas) moeda (1 casa) ag bancaria (5 digitos) valor do boleto (10 casas, sendo as duas últimasrepresentamoscentavos)datadevencimento(8dígitos)datadepagamento(8dígitos)
 
-The workspace contains two folders by default, where:
+Amoedadeveserverificada,sendo:1=real,2=dólar,3=euro,4=peso,5=libra 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Façaumprogramaquesepareosrespectivosconteúdoseescreva-os,sendoqueovaloreas datasdevemserpreparadospara seremescritos noformato correto. 
+Exemplo de saída com dados fictícios: 
+Banco...............355
+ 
+Moeda..............Real 
+Agencia..........:35.470 
+Valor do boleto:25.890,24 
+Dt.Vencimento: 25/10/2022 
+Dt.Pagamento...08/11/2022

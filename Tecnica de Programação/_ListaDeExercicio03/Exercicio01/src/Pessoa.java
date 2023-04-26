@@ -20,21 +20,21 @@ public class Pessoa {
         System.out.println("Salário: " + salario);
     }
 
-    public int lerInt(String mensagem) {
+    public static int lerInt(String mensagem) {
         Scanner sc = new Scanner(System.in);
         System.out.print(mensagem);
         int valor = sc.nextInt();
         return valor;
     }
 
-    public String lerString(String mensagem) {
+    public static String lerString(String mensagem) {
         Scanner sc = new Scanner(System.in);
         System.out.print(mensagem);
         String valor = sc.nextLine();
         return valor;
     }
 
-    public double lerDouble(String mensagem) {
+    public static double lerDouble(String mensagem) {
         Scanner sc = new Scanner(System.in);
         System.out.print(mensagem);
         double valor = sc.nextDouble();

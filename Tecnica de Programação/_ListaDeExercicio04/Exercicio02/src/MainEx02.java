@@ -1,66 +1,64 @@
-import java.util.Scanner;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
 
 public class MainEx02 {
-    public static void main(String[] args) throws Exception {
 
-        Scanner sc = new Scanner(System.in);
+	Random r = new Random();
 
-        Aluno[] aluno;
-        String nome;
-        int idade;
-        int matricula;
+	public static void main(String[] args) {
+		MainEx04 pri = new MainEx04();
 
-        int tamanhoDaLista;
-        
-        System.out.print("Escreva o número de alunos que deseja cadastrar: ");
-        tamanhoDaLista = sc.nextInt();
-        aluno = new Aluno[tamanhoDaLista];
+		int conta=0;
+		while (conta==0)
+		{
+			String s=JOptionPane.showInputDialog(null,"digite a quantidade de nomes","Entrada",0);
+			try{
+				conta=Integer.parseInt(s);
+				if (conta<5 || conta>30)
+				{
+					JOptionPane.showMessageDialog(null,"valor n�o deve ser menor que 5 e nem maior que 30","Erro",1);
+					conta=0;
+				}
+			}
+			catch(Exception e)
+			{
+				JOptionPane.showMessageDialog(null,"Valor informado � inv�lido","Erro",1);
+				conta=0;
 
-        for (int i = 0; i < aluno.length; i++) {
-            nome = gerarNome();
-            idade = gerarIdade();
-            matricula = 1000 + i;
+			}
+		}
+		Pessoa[] vetor = new Pessoa[conta];
+		for(int i=0;i<conta;i++){
+			Pessoa p= new Pessoa();
+			p.setNome(pri.geraString(10));
+			p.setSobreNome(pri.geraString(15));
+			vetor[i]=p;
+		}
 
-            if(matricula > 9999) {
-                break;
-            }
+		String resultado="SEQ     NOME        SOBRENOME\n";
+		int seq=1;
+		for(int i=0; i<conta; i++){
+			if (seq<10)
+				resultado=resultado+"00"+seq+"  ";
+			else
+				resultado=resultado+"0"+seq+"  ";
+			resultado=resultado+vetor[i].getNome()+"   ";
+			resultado=resultado+vetor[i].getSobreNome()+"\n";
+			seq++;
+		}
+        JOptionPane.showMessageDialog(null,resultado,"final",3);
 
-            aluno[i] = new Aluno (nome, idade, matricula);
+	}
 
-        }
+	public String geraString(int quant){
+		String s="";
+		for(int i=0; i<quant; i++){
+			int x= r.nextInt(26)+65;
+			char c= (char)x;
+			s=s+s.valueOf(c);
+		}
+		return s;
+	}
 
-        System.out.println("| Matricula - Nome - Idade - Turma |");
-        for (int i = 0; i < aluno.length; i++) {
-            System.out.print("| " + aluno[i].getMatricula());
-            System.out.print(" - " + aluno[i].getNome());
-            System.out.print(" - " + aluno[i].getIdade());
-            System.out.print(" - " + aluno[i].getTurma() + " |\n");
-        }
-
-        sc.close();
-    }
-
-    public static String gerarNome() {
-        String nome = ""; // 65 - 90
-        String aux = "";
-
-        for (int i = 0; i < 15; i++) {
-            Double random = Math.random()*25 + 65;
-            int num = random.intValue();
-    
-            aux += (char)num;
-            nome = aux;       
-        }
-        return nome;
-    }
-    
-    public static int gerarIdade() {
-        int idade = 0;
-
-        for (int i = 0; i < 15; i++) {
-            Double random = Math.random()*28 + 7;
-            idade = random.intValue();       
-        }
-        return idade;
-    }
-} 
+}

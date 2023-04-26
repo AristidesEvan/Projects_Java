@@ -1,18 +1,3 @@
-## Getting Started
+## Exercício 08
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Uma universidade deseja fazer um levantamento a respeito do seu concurso vestibular. Para cada curso, é fornecido o seguinte conjunto de valores: código do curso, número de vagas, número de candidatos do sexo masculino; número de  candidatos  do  sexo  feminino.  O último  conjunto,  para  indicar  o  fim  dos dados, contém o código do curso igual a zero. Fazer um algoritmo que: calcule e escreva, para cada curso, o número de candidatos por vaga e a porcentagem de  candidatos  do  sexo  feminino  com  o  correspondente  código  do curso; determine  o  maior  número  de  candidatos  por  vaga  e  escreva  esse  número juntamente  com  o  código  do  curso  correspondente  (supor  que  não  ocorra empate); calcule e escreva o total de candidatos.

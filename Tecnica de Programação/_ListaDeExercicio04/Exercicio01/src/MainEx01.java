@@ -17,22 +17,20 @@ public class MainEx01 {
         aluno = new Aluno[tamanhoDaLista];
 
         for (int i = 0; i < aluno.length; i++) {
+            nome = gerarNome();
+            idade = gerarIdade();
+            matricula = 1000 + i;
 
-            System.out.print("Escreva o nome do(a) aluno(a) "+ i +": ");
-            nome = sc.next();
-
-            System.out.print("Escreva a idade do(a) aluno(a) "+ i +": ");
-            idade = sc.nextInt();
-
-            System.out.print("Escreva o matricula do(a) aluno(a) "+ i +": ");
-            matricula = sc.nextInt();
+            if(matricula > 9999) {
+                break;
+            }
 
             aluno[i] = new Aluno (nome, idade, matricula);
 
         }
 
+        System.out.println("| Matricula - Nome - Idade - Turma |");
         for (int i = 0; i < aluno.length; i++) {
-            System.out.println("| Matricula - Nome - Idade - Turma |");
             System.out.print("| " + aluno[i].getMatricula());
             System.out.print(" - " + aluno[i].getNome());
             System.out.print(" - " + aluno[i].getIdade());
@@ -40,5 +38,29 @@ public class MainEx01 {
         }
 
         sc.close();
+    }
+
+    public static String gerarNome() {
+        String nome = ""; // 65 - 90
+        String aux = "";
+
+        for (int i = 0; i < 15; i++) {
+            Double random = Math.random()*25 + 65;
+            int num = random.intValue();
+    
+            aux += (char)num;
+            nome = aux;       
+        }
+        return nome;
+    }
+    
+    public static int gerarIdade() {
+        int idade = 0;
+
+        for (int i = 0; i < 15; i++) {
+            Double random = Math.random()*28 + 7;
+            idade = random.intValue();       
+        }
+        return idade;
     }
 } 
