@@ -1,18 +1,8 @@
-## Getting Started
+## Exercício 03
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Escrevaumprogramaque, apartirdeumnomeinformadopelousuário,exibasuasiniciais. As iniciais são formadas pela   primeira letra de cada nome, sendo que todas deverão aparecer em maiúsculas na saída do programa. Note que os conectores e, do, da, dos, das de, di, du não são considerados nomes e, portanto, não devem ser considerados para aobtenção das iniciais. As iniciais devem ser impressas emmaiúsculas,ainda que onome seja entrado todoemminúsculas. 
+Exemplos: 
+Maria das Graças Pimenta => MGP
+JoãoCarlosdosSantos=>JCS
+Joséda Silva => JS
+PedroPereiraTeixeira=>PPT

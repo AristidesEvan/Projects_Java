@@ -6,6 +6,10 @@ public class Pessoa {
     private String cpf;
     private double salario;
 
+    Scanner input = new Scanner(System.in);
+
+    public Pessoa(){}
+
     public Pessoa(int matricula, String nome, String cpf, double salario) {
         this.matricula = matricula;
         this.nome = nome;
@@ -20,21 +24,26 @@ public class Pessoa {
         System.out.println("Salário: " + salario);
     }
 
-    public static int leInt(String msg) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(msg);
-        return sc.nextInt();
+    public void setMatricula(String aux) {
+        System.out.print(aux);
+        this.matricula = input.nextInt();
     }
 
-    public static String leString(String msg) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(msg);
-        return sc.nextLine();
+    public void setNome(String aux) {
+        System.out.print(aux);
+        input.skip("\\R");
+        this.nome = input.nextLine();
     }
 
-    public static double leDouble(String msg) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(msg);
-        return sc.nextDouble();
+    public void setCpf(String aux) {
+        System.out.print(aux);
+        this.cpf = input.nextLine();
     }
+
+    public void setSalario(String aux) {
+        System.out.print(aux);
+        this.salario = input.nextDouble();
+    }
+
+
 }

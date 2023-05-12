@@ -1,18 +1,3 @@
-## Getting Started
+## Exercício 05
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Supondo  que  a  população  de  uma  cidade  A  seja  da  ordem  de  90.000 habitantes  com  taxa  anual  de  crescimento  de  3%  e  que  a  população  de  uma cidade  B  seja  de  200.000  habitantes  com  uma  taxa  anual  de  crescimento  de 1,5%.  Faça  um programaque  determine  e  escreva  o  tempo  (em  anos) necessário   para   que  população   da   cidade   A   ultrapasse   ou   se   iguale   a população da cidade B, mantidas essas taxas de crescimento.

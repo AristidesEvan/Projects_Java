@@ -1,18 +1,3 @@
-## Getting Started
+## Exercício 07
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Foi  feita  uma  pesquisa  de  audiência  de  canal  de  TV  em  várias  casas  de uma certa cidade, num determinado dia. Para cada casa visitada, é fornecido o número  do  canal  (4,5,7,12)  e  o  número  de  pessoas  que  o  estavam  assistindo naquela casa. Se a televisão estivesse desligada, nada era anotado, ou seja, a casa  não  entrava  na  pesquisa.  Fazer  um programaque:  leia  um  número indeterminado de dados, sendo que o “FLAG” corresponde ao número do canal igual  a  zero  (0).  Calcule  a  porcentagem  de  audiência  para  cada  emissora. Escreva o número do canal e a sua respectiva porcentagem
