@@ -3,49 +3,64 @@ import java.util.Scanner;
 public class MainEx01 {
     public static void main(String[] args) throws Exception {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+
+        Aluno[] aluno;
+        String nome;
+        int idade;
+        int matricula;
+
+        int tamanhoDaLista;
         
-        Animal[] animal;
-        int QtdAnimais;
+        System.out.print("Escreva o número de alunos que deseja cadastrar: ");
+        tamanhoDaLista = sc.nextInt();
+        aluno = new Aluno[tamanhoDaLista];
 
-        System.out.print("Digite quantos animais deseja cadastrar: ");
-        QtdAnimais = scanner.nextInt();
-        animal = new Animal[QtdAnimais];
+        for (int i = 0; i < aluno.length; i++) {
+            nome = gerarNome();
+            idade = gerarIdade();
+            matricula = 1000 + i;
 
-        for (int i = 0; i < animal.length; i++) {
-            
-            String nome, cor, ambiente, caracteristicas;
-            Double comprimento;
-            int patas;
+            if(matricula > 9999) {
+                break;
+            }
 
-            System.out.print("Nome do animal: ");
-            nome = scanner.next();
-            System.out.print("Cor do animal: ");
-            cor = scanner.next();
-            System.out.print("Ambiente do animal: ");
-            ambiente = scanner.next();
-            System.out.print("Caracteristica do animal: ");
-            caracteristicas = scanner.next();
-            System.out.print("Comprimento do animal: ");
-            comprimento = scanner.nextDouble();
-            System.out.print("patas do animal: ");
-            patas = scanner.nextInt();
+            aluno[i] = new Aluno (nome, idade, matricula);
 
-            animal[i] = new Animal(nome, cor, ambiente, caracteristicas, comprimento, patas);
-            
         }
 
-        for (int i = 0; i < animal.length; i++) {
-            System.out.println("| Animal "+i+" |");
-            System.out.println(" - nome: " + animal[i].getNome());
-            System.out.println(" - cor: " + animal[i].getCor());
-            System.out.println(" - ambiente: " + animal[i].getAmbiente());
-            System.out.println(" - caracteristicas: " + animal[i].getCaracteristicas());
-            System.out.println(" - comprimento: " + animal[i].getComprimento());
-            System.out.println(" - patas: " + animal[i].getPatas() + "\n");
+        System.out.println("| Matricula - Nome - Idade - Turma |");
+        for (int i = 0; i < aluno.length; i++) {
+            System.out.print("| " + aluno[i].getMatricula());
+            System.out.print(" - " + aluno[i].getNome());
+            System.out.print(" - " + aluno[i].getIdade());
+            System.out.print(" - " + aluno[i].getTurma() + " |\n");
         }
 
-
-        scanner.close();
+        sc.close();
     }
-}
+
+    public static String gerarNome() {
+        String nome = ""; // 65 - 90
+        String aux = "";
+
+        for (int i = 0; i < 15; i++) {
+            Double random = Math.random()*25 + 65;
+            int num = random.intValue();
+    
+            aux += (char)num;
+            nome = aux;       
+        }
+        return nome;
+    }
+    
+    public static int gerarIdade() {
+        int idade = 0;
+
+        for (int i = 0; i < 15; i++) {
+            Double random = Math.random()*28 + 7;
+            idade = random.intValue();       
+        }
+        return idade;
+    }
+} 

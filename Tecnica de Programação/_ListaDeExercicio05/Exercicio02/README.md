@@ -1,3 +1,9 @@
-## Exercício 02
+## Exercício 04
 
-Um  funcionário  possui  nome,  CPF  e  RG  e  um  gerente  possui  o  grau  nivelGerencia.  Um gerente  é  um  funcionário.  Tanto  gerente  quanto  funcionário  podem  receber  aumentos.  No entanto,  gerente  pode  receber  aumento  de  15%  e  funcionário  de  10%.  Crie  o  método exibeDados que exiba de maneira legível cada atributo do funcionário. Crie a classe Assistente, que  também  é  um  funcionário,  que  possui  o  número  de  matrícula.  Sobrescreva  o  método exibDados. Sabendo-se  que  os  Assistentes  Técnicos  possuem  um  bônus  salarial  e  que  os Assistentes  Administrativos  possuem  um  turno  (dia  ou  noite)  e  um  adicional  noturno,  crie  as classes Tecnico e Administrativo. Em seguida, crie uma classe para manipular os objetos dessas classes.
+Considerandoamesmaclassedealunoscomosatributosnome,idade,matriculae turma.Elaboreumprogramaquepermitainstanciarumaquantidadeespecificade alunos(informadapelousuário)e,paracadainstância,efetuararespectivamatrícula, masamatriculadeveráestabeleceraturmadorespectivoalunoanalisandosuaidade. Aidadedevesergeradarandomicamenteentre7e35anos.Asmatriculasdevemser geradasrandomicamenteentre1000e9999,depreferência,nãorepetirmatricula.Os nomesdevempossuirnomeesobrenome(cadaumcom15caracteres).Cadanomee sobrenomedevesergeradorandomicamentecomletrasmaiúsculas.Conformea idade,oalunoserámatriculadonumaturmaespecífica(Infância,Adolescênciae Adulto).Alémdisso,oprogramadeveráimprimirumasequêncianuméricaespecífica paracadaaluno(criadadinamicamentepeloprograma).UTILIZARVETORPARA ARMAZENAREACESSAROSDADOSDOSALUNOS.Imprimirosdadosnovetorno formatoaseguir: 
+RELAÇÃODEALUNOS 
+---------------------------------------------------------------------- 
+Seq Matr. Nome Idade Turma 
+001 9999 Aaa Bbb 99 Infância
+......... 
+*Criarummétodoparagerarasequênciarandomicamente(entre1e1000) Cadasequênciadevepossuirzerosàesquerda(um,doisoutrêszeros, conformeonúmerogeradoparaasequência)

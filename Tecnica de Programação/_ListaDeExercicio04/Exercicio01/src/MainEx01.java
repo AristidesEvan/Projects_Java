@@ -1,66 +1,106 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainEx01 {
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-
-        Scanner sc = new Scanner(System.in);
-
-        Aluno[] aluno;
-        String nome;
-        int idade;
-        int matricula;
-
-        int tamanhoDaLista;
+        ArrayList<Pessoa> pessoas = new ArrayList<>();
+        int flag = 1;
         
-        System.out.print("Escreva o número de alunos que deseja cadastrar: ");
-        tamanhoDaLista = sc.nextInt();
-        aluno = new Aluno[tamanhoDaLista];
 
-        for (int i = 0; i < aluno.length; i++) {
-            nome = gerarNome();
-            idade = gerarIdade();
-            matricula = 1000 + i;
-
-            if(matricula > 9999) {
+        while (flag != 0) {
+            String grauInstrucao = "Digite o grau de instrução da pessoa: ";
+            String codeSexo = "Digite o código do sexo da pessoa: ";
+            String idade = "Digite a idade da pessoa: ";
+            Pessoa aux = new Pessoa(lerString(grauInstrucao), lerString(codeSexo), lerInt(idade));
+            if(aux.getIdade() == 0) {
+                flag = 0;
                 break;
             }
+            pessoas.add(aux);
+            System.out.println(mostrarLista(pessoas));
+            int[] qtd = qtd(pessoas);
+            System.out.println("A quantidade de pessoas do sexo masculino com grau médio é: "+qtd[0]+".\nA quantidade de mulheres com grau Fundamental é: "+qtd[1]);
+            System.out.println("A média  das idades das pessoas com grau pós é: "+mediaIdade(pessoas));
+            System.out.println("A porcentagem de pessoas femininas com grau superior é: "+porCemFem(pessoas));
 
-            aluno[i] = new Aluno (nome, idade, matricula);
 
+
+            System.out.print("0 para encerrar: ");
+            flag = input.nextInt();
         }
 
-        System.out.println("| Matricula - Nome - Idade - Turma |");
-        for (int i = 0; i < aluno.length; i++) {
-            System.out.print("| " + aluno[i].getMatricula());
-            System.out.print(" - " + aluno[i].getNome());
-            System.out.print(" - " + aluno[i].getIdade());
-            System.out.print(" - " + aluno[i].getTurma() + " |\n");
-        }
 
-        sc.close();
+
+    }
+    public static int[] qtd(ArrayList<Pessoa> lista) {
+        int[] qnt = {0,0}; 
+        for (Pessoa pessoa : lista) {
+            if(pessoa.getGrauInstrucao().equals("medio") && pessoa.getCodeSexo().equals("masc")) {
+                qnt[0]++; 
+            }
+        }
+        for (Pessoa pessoa : lista) {
+            if(pessoa.getGrauInstrucao().equals("fundamental") && pessoa.getCodeSexo().equals("fem")) {
+                qnt[1]++; 
+            }
+        }
+        return qnt;
+    } 
+
+    public static double mediaIdade(ArrayList<Pessoa> lista) {
+        int idade = 0, total = 0;
+        double media = 0.0;
+        for (Pessoa pessoa : lista) {
+            if(pessoa.getGrauInstrucao().equals("pos")) {
+                idade += pessoa.getIdade();
+                total++;
+            }
+        }
+        if(total == 0){return media;};
+        media = idade / total;
+        return media;
     }
 
-    public static String gerarNome() {
-        String nome = ""; // 65 - 90
+    public static double porCemFem(ArrayList<Pessoa> lista) {
+        int qnt = 0, total = 0;
+        double porCem = 0.0;
+        for (Pessoa pessoa : lista) {
+            if(pessoa.getGrauInstrucao().equals("superior") && pessoa.getCodeSexo().equals("fem")) {
+                qnt++;
+            }
+            total++;
+        }
+        porCem = qnt / total;
+        return porCem;
+    }
+
+    public static String mostrarLista(ArrayList<Pessoa> lista){
         String aux = "";
 
-        for (int i = 0; i < 15; i++) {
-            Double random = Math.random()*25 + 65;
-            int num = random.intValue();
-    
-            aux += (char)num;
-            nome = aux;       
+        for (Pessoa pessoa : lista) {
+            aux += pessoa.getPessoa();
         }
-        return nome;
+        return aux;
     }
-    
-    public static int gerarIdade() {
-        int idade = 0;
 
-        for (int i = 0; i < 15; i++) {
-            Double random = Math.random()*28 + 7;
-            idade = random.intValue();       
+    public static String lerString(String print) {  
+        System.out.print(print);
+        String aux = input.nextLine();
+        if(aux.equals("")) {
+            aux = input.nextLine();
         }
-        return idade;
+        return aux;
     }
-} 
+
+    public static int lerInt(String print) {
+        System.out.print(print);
+        int aux = input.nextInt();
+        while (aux < 0) {
+            System.out.print("Erro: A idade não pode ser menor que 0, digite outra idade: ");
+            aux = input.nextInt();
+        }
+        return aux;
+    }
+
+}
