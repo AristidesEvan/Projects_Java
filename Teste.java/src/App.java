@@ -1,18 +1,16 @@
-import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int x, y ,r = 0;
-        Scanner input = new Scanner(System.in);
-
-        x = input.nextInt();
-        y = input.nextInt();
-
-        for (int i = 1; i < x; i++) {
-            if(x % i == 0 && y % i == 0) {
-                r = i;
-            }
+        String[] nomes = nome.split(" ");
+        String aux = "";
+        System.out.println(nomes);
+        for (int i = 0; i < nomes.length; i++) {
+            nomes[i] = nomes[i].substring(0, 1).toUpperCase() + nomes[i].substring(1).toLowerCase();
+            aux = aux + " " + nomes[i];  
         }
-        System.out.println(r);
+        nome = aux.trim();
+        System.out.println(nome);
+
+
     }
 }

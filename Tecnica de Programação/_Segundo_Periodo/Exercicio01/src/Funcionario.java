@@ -2,15 +2,15 @@ import java.util.ArrayList;
 
 public class Funcionario {
 
-    private int codigo;
+    public String codigo;
     private int matricula;
     private String nome;
-    private Double salario;
-    private Double gratificacao;
+    private String salario;
+    private String gratificacao;
     private ArrayList<Descendente> descendente = new ArrayList<>();
     
     public Funcionario() {}
-    public Funcionario(int codigo, int matricula, String nome, Double salario, Double gratificacao) {
+    public Funcionario(String codigo, int matricula, String nome, String salario, String gratificacao) {
         this.codigo = codigo;
         this.matricula = matricula;
         this.nome = nome;
@@ -18,16 +18,16 @@ public class Funcionario {
         this.gratificacao = gratificacao;
     }
     
-    public int getCodigo() {return codigo;}
-    public void setCodigo(int codigo) {this.codigo = codigo;}
+    public String getCodigo() {return codigo;}
+    public void setCodigo(String codigo) {this.codigo = codigo;}
     public int getMatricula() {return matricula;}
     public void setMatricula(int matricula) {this.matricula = matricula;}
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome = nome;}
-    public Double getSalario() {return salario;}
-    public void setSalario(Double salario) {this.salario = salario;}
-    public Double getGratificacao() {return gratificacao;}
-    public void setGratificacao(Double gratificacao) {this.gratificacao = gratificacao;}
+    public String getSalario() {return salario;}
+    public void setSalario(String salario) {this.salario = salario;}
+    public String getGratificacao() {return gratificacao;}
+    public void setGratificacao(String gratificacao) {this.gratificacao = gratificacao;}
     public ArrayList<Descendente> getDescendente() {
         return descendente;
     }

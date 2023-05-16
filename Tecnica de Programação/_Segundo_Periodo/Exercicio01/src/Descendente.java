@@ -16,6 +16,12 @@ public class Descendente{
     public String getNascimento() {return nascimento;}
     public void setNascimento(String nascimento) {this.nascimento = nascimento;}
     public String getSexo() {return sexo;}
-    public void setSexo(String sexo) {this.sexo = sexo;}
+    public void setSexo(String sexo) {
+
+    }
+
+
+
+    
     
 }

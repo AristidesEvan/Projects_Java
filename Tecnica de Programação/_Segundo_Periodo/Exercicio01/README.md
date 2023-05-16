@@ -1,18 +1,10 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Exercício com leitura de arquivo e collections 01.Considere um arquivo texto com várias linhas, sendo que cada linhapossui oseguinteformato:
+ 9999-MARIA DA SILVA-0539820-0120000-CARLOS JOSÉ-30012000-M- MARIACARLA-08052005-F
+ Onde: 1.Cadalinhapossuiasseguintesinformações: Matriculadofuncionário   (9999),traço,nomedofuncionário (MARIA  DA  SILVA),traço,saláriodofuncionário  (0539820), traço,   gratificação   (0120000),traço,nomedofilho   (CARLOS JOSÉ),traço,datadenascimentodessefilho  (30012000),traço, códigodosexo(M=masculino,F=Feminino)  do  filho,traço,nome deoutrofilho (MARIA CARLA),traço,data de nascimento desse filho (08052005),traço,código do sexo desse filho; 2.Um  funcionário  poderá  ter  ou  não  gratificação.  Caso  não  tenha,  o valordeverserinformado comzeros; 3.Salárioegratificaçãodevemterinformaçõesnacasadasdezenas demilhares,obrigatoriamente,  sendo  que  os  dois  últimos  digitos desses valores são casas decimais; 4.O  valor  do  salário  deve  ser  diferente  de  zero,  obrigatoriamente; 05.Umfuncionáriopoderáternenhum,umoumaisdeumfilhoou filha; 6.Osnomesdosfuncionáriosedeseusfilhosdevemsergravadosno arquivocomletrasmaiúsculas,obrigatoriamente; 7.Os nomes de cada funcionário e de cada filho(a) deve possuir, no máximo, 20 caracteres. Se for com menos caracteres, deve-se completar com espaços.
+ Utilize  um  programa  de  edição  de  textos,  como  o  bloco  de  notas,  por exemplo,  e  crie  o  seu  próprio  arquivo  de  texto  contendo  diversas  linhas, cada uma com dados de um funcionário (conforme o padrão estabelecido pelos  itens  01  a  07),  destacando  alguns  funcionárioscom  nenhum  filho; outros com um, dois, três e quatro filhos. Crie, nomínimo, dez linhas com esse  formato.  Salve  esse  arquivo  na  sua  unidadedearmazenamento principaldoseucomputadoremumdiretórioespecífico, podendo ser na pasta src do projeto.
+ Em seguida, elabore um projeto, com um programa principal e classes de apoio,que  permita  ler  o  arquivo  de  texto  criado  e,  em  seguida,  permita escreveros  dados  de  cada  funcionário,  sendo  que  se  deve  utilizar  beans paraosdadosdefuncionáriosedeseusrespectivosfilhos.Utilizar, obrigatoriamente,coleçõesparafacilitaramanipulaçãodosdados considerando,principalmente,queumfuncionáriopoderáteruma
+ 
+coleção  de  filhos. A  saída  das  informações  deve  utilizar  JOptionPane  e devepossuiroseguinteformato:           Lista de funcionários           ============================================== 001MariaDaSilva–R$5.398,20–R$1.200,00 Carlos José – 30/01/2000 – Masculino MariaCarla–08/05/2005–Feminino             002 JoséPereiraDaSilva–R$2.527,86–R$0,00 <Semfilhos>             003 Antônio Silvest– R$ 3.348,59 – R$ 2.385,00 MarietaJoaquinaDeSouza–08/05/1998–Feminino
+ Note  que  os  números  sequenciais  devem  ser  preenchidos  com  zeros  à esquerda. Neste caso, o programa deverá solicitar ao usuário qual o valor inicial dessa sequência, que poderá ser de 1 a 98. Esses valores devem ser validados  pelo  programa  que  deverá  apresentar  uma  mensagem  de  erro casoo  usuárioinformeumvalorfora  dointervalo.  Note  que  os  valores dos  salários,  das  gratificações  e  das  datas  estão  formatados.  Observe também que o nome do sexo está visualizado por extenso.
