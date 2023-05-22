@@ -1,0 +1,11 @@
+A altura da árvore é 4.
+
+A altura do nó (José, 56781234) é 3, e a altura do nó (Luan, 23458765) é 2.
+
+A profundidade do nó (Laura, 98764567) é 3, e a profundidade do nó (Wendell, 41964704) também é 3.
+
+A árvore tem 5 níveis.
+
+Se a árvore estivesse cheia (completa) em todos os níveis, ela teria os seguintes números de nós em cada nível: Nível 0: 1 nó, Nível 1: 2 nós, Nível 2: 4 nós, Nível 3: 8 nós, Nível 4: 16 nós. A formula para encontrar esses valores é 2^nível, onde "nível" é o número do nível.
+
+A árvore tem um total de 13 nós. A fórmula para encotrar esse valor é a soma do número de nós em cada nível.
