@@ -15,7 +15,6 @@ public class App {
             textoEmString = new String(textoEmByte);
 
             
-
         } catch (Exception e) {
             System.out.println(e);
         }
