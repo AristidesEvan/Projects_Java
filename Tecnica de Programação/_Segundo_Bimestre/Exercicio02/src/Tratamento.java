@@ -148,34 +148,6 @@ public class Tratamento {
         return this.funcionarios;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
     public String getFuncionariosFormatados() {
         ArrayList<Funcionario> listaDeFuncionarios = this.funcionarios;
         String retorno = "";
