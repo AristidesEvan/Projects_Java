@@ -92,7 +92,7 @@ public class PessoaDAO {
         }
     }
 
-    public static void excluirProfissao(int id) {
+    public static void excluirPessoa(int id) {
 
         String sql = "DELETE FROM profissoes WHERE id_pessoa = ?";
 
@@ -118,7 +118,7 @@ public class PessoaDAO {
         }
     }
 
-    public static void buscarProfissoesPorId(int identificador) {
+    public static void buscarPessoasPorId(int identificador) {
 
         String sql = "SELECT * FROM profissoes WHERE id_pessoa = ?";
 
@@ -147,9 +147,9 @@ public class PessoaDAO {
         
     }
 
-    public static void buscarProfissoesPorNome(String nomeProfissao) {
+    public static void buscarPessoasPorNome(String nomePessoa) {
 
-        String aux = "%"+nomeProfissao+"%";
+        String aux = "%"+nomePessoa+"%";
         String sql = "SELECT * FROM profissoes WHERE nome_pessoa LIKE ?";
 
         PreparedStatement ps = null;

@@ -33,15 +33,15 @@ public class App {
                     break;
 
                 case 5:
-                    
+                        incluirPessoa();
                     break;
 
                 case 6:
-                    
+                        alterarPessoa();
                     break;
 
                 case 7:
-                    
+                        deletarPessoa();
                     break;
 
                 case 8:
@@ -194,5 +194,90 @@ public class App {
         PessoaDAO.cadastrarPessoa(pessoa);
     }
 
+    public static void alterarPessoa() {
+        Pessoa pessoa = new Pessoa();
+
+        PessoaDAO.listarPessoas();
+
+        System.out.print("\n\nDigite o nome da pessoa que deseja alterar ou deixe esse campo em branco caso queira pesquisar pelo código da pessoa: ");
+        input.skip("\\R");
+        String nomePessoaAux = input.nextLine();
+
+        if (nomePessoaAux.equals("")) {
+
+            do {
+                System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                int codigoPessoaAux = input.nextInt();
+                pessoa = PessoaDAO.buscarPessoasPorId(codigoPessoaAux);
+            } while (pessoa == null);
+
+        } else {
+            pessoa = PessoaDAO.buscarPessoasPorNome(nomePessoaAux);
+            if (pessoa == null) {
+
+                do {
+                    System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                    int codigoPessoaAux = input.nextInt();
+                    pessoa = PessoaDAO.buscarPessoasPorId(codigoPessoaAux);
+                } while (pessoa == null);
+
+            }
+        }
+
+        System.out.print("\n\nDigite o novo nome da pessoa: ");
+        String nomePessoa = input.nextLine();
+        System.out.print("\nDigite a nova descrição da pessoa: ");
+        String descricaoPessoa = input.nextLine();
+
+        pessoa.setNome_pessoa(nomePessoa);
+
+        PessoaDAO.cadastrarPessoa(pessoa);
+    }
+
+     public static void deletarPessoa() {
+
+        Pessoa pessoa = new Pessoa();
+
+        System.out.print("\n\nDigite o id da pessoa que deseja deletar: ");
+        int idPessoa = input.nextInt();
+
+        pessoa.setId_pessoa(idPessoa);
+
+        PessoaDAO.excluirPessoa(idPessoa);
+    }
+    public static void listarPessoas() {
+
+        Pessoa pessoa = new Pessoa();
+
+        PessoaDAO.listarPessoas();
+
+        System.out.print("\n\nDigite o nome da pessoa que deseja pesquisar ou deixe esse campo em branco caso queira pesquisar pelo código da pessoa: ");
+        input.skip("\\R");
+        String nomePessoaAux = input.nextLine();
+
+        if (nomePessoaAux.equals("")) {
+
+            do {
+                System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                int codigoPessoaAux = input.nextInt();
+                pessoa = PessoaDAO.buscarProfissoesPorId(codigoPessoaAux);
+            } while (pessoa == null);
+
+        } else {
+            pessoa = PessoaDAO.buscarProfissoesPorNome(nomePessoaAux);
+            if (pessoa == null) {
+
+                do {
+                    System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                    int codigoPessoaAux = input.nextInt();
+                    pessoa = PessoaDAO.buscarProfissoesPorId(codigoPessoaAux);
+                } while (pessoa == null);
+
+            }
+        }
+
+        System.out.println("Para continuar, digite a proxima opcao desejada");
+        escolher();
+    }
 
 }
