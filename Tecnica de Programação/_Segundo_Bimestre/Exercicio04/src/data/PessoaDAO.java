@@ -9,7 +9,7 @@ import model.Pessoa;
 
 public class PessoaDAO {
 
-    public static void cadastrarProfissao(Pessoa pessoa) {
+    public static void cadastrarPessoa(Pessoa pessoa) {
 
         String sql = "INSERT INTO pessoas (nome_pessoa, id_lista_de_profissao_fk, id_lista_de_telefones_fk) VALUES (?, ?, ?);";
 
@@ -92,7 +92,7 @@ public class PessoaDAO {
         }
     }
 
-    public static void excluirProfissao(int id) {
+    public static void excluirPessoa(int id) {
 
         String sql = "DELETE FROM profissoes WHERE id_pessoa = ?";
 
@@ -118,7 +118,7 @@ public class PessoaDAO {
         }
     }
 
-    public static void buscarProfissoesPorId(int identificador) {
+    public static void buscarPessoasPorId(int identificador) {
 
         String sql = "SELECT * FROM profissoes WHERE id_pessoa = ?";
 
@@ -147,9 +147,9 @@ public class PessoaDAO {
         
     }
 
-    public static void buscarProfissoesPorNome(String nomeProfissao) {
+    public static void buscarPessoasPorNome(String nomePessoa) {
 
-        String aux = "%"+nomeProfissao+"%";
+        String aux = "%"+nomePessoa+"%";
         String sql = "SELECT * FROM profissoes WHERE nome_pessoa LIKE ?";
 
         PreparedStatement ps = null;

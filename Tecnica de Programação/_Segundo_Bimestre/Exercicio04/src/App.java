@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 import data.ProfissaoDAO;
 import model.Profissao;
+import data.PessoaDAO;
+import model.Pessoa;
 
 public class App {
     static Scanner input = new Scanner(System.in);
@@ -23,27 +25,27 @@ public class App {
                     break;
 
                 case 3:
-                    
+                        deletarProfissao();
                     break;
 
                 case 4:
-                    
+                        listarProfissoes();
                     break;
 
                 case 5:
-                    
+                        incluirPessoa();
                     break;
 
                 case 6:
-                    
+                        alterarPessoa();
                     break;
 
                 case 7:
-                    
+                        deletarPessoa();
                     break;
 
                 case 8:
-                    
+                        listarPessoas();
                     break;
 
                 case 9:
@@ -104,7 +106,7 @@ public class App {
         if (nomeProfissaoAux.equals("")) {
 
             do {
-                System.out.print("\n\nDigite o códgio da profissão que deseja alterar: ");
+                System.out.print("\n\nDigite o código da profissão que deseja alterar: ");
                 int codigoProfissaoAux = input.nextInt();
                 profissao = ProfissaoDAO.buscarProfissoesPorId(codigoProfissaoAux);
             } while (profissao == null);
@@ -114,7 +116,7 @@ public class App {
             if (profissao == null) {
 
                 do {
-                    System.out.print("\n\nDigite o códgio da profissão que deseja alterar: ");
+                    System.out.print("\n\nDigite o código da profissão que deseja alterar: ");
                     int codigoProfissaoAux = input.nextInt();
                     profissao = ProfissaoDAO.buscarProfissoesPorId(codigoProfissaoAux);
                 } while (profissao == null);
@@ -132,4 +134,150 @@ public class App {
 
         ProfissaoDAO.cadastrarProfissao(profissao);
     }
+
+    public static void deletarProfissao() {
+
+        Profissao profissao = new Profissao();
+
+        System.out.print("\n\nDigite o id da profissão que deseja deletar: ");
+        int idProfissao = input.nextInt();
+
+        profissao.setId_profissao(idProfissao);
+
+        ProfissaoDAO.excluirProfissao(idProfissao);
+    }
+
+    public static void listarProfissoes() {
+
+        Profissao profissao = new Profissao();
+
+        ProfissaoDAO.listarProfissoes();
+
+        System.out.print("\n\nDigite o nome da profissão que deseja pesquisar ou deixe esse campo em branco caso queira pesquisar pelo código da profissão: ");
+        input.skip("\\R");
+        String nomeProfissaoAux = input.nextLine();
+
+        if (nomeProfissaoAux.equals("")) {
+
+            do {
+                System.out.print("\n\nDigite o código da profissão que deseja alterar: ");
+                int codigoProfissaoAux = input.nextInt();
+                profissao = ProfissaoDAO.buscarProfissoesPorId(codigoProfissaoAux);
+            } while (profissao == null);
+
+        } else {
+            profissao = ProfissaoDAO.buscarProfissoesPorNome(nomeProfissaoAux);
+            if (profissao == null) {
+
+                do {
+                    System.out.print("\n\nDigite o código da profissão que deseja alterar: ");
+                    int codigoProfissaoAux = input.nextInt();
+                    profissao = ProfissaoDAO.buscarProfissoesPorId(codigoProfissaoAux);
+                } while (profissao == null);
+
+            }
+        }
+
+        System.out.println("Para continuar, digite a proxima opcao desejada");
+        escolher();
+    }
+
+    public static void incluirPessoa() {
+
+        Pessoa pessoa = new Pessoa();
+
+        System.out.print("\n\nDigite o nome da pessoa: ");
+        String nomepessoa = input.nextLine();
+
+        pessoa.setNome_pessoa(nomepessoa);
+
+        PessoaDAO.cadastrarPessoa(pessoa);
+    }
+
+    public static void alterarPessoa() {
+        Pessoa pessoa = new Pessoa();
+
+        PessoaDAO.listarPessoas();
+
+        System.out.print("\n\nDigite o nome da pessoa que deseja alterar ou deixe esse campo em branco caso queira pesquisar pelo código da pessoa: ");
+        input.skip("\\R");
+        String nomePessoaAux = input.nextLine();
+
+        if (nomePessoaAux.equals("")) {
+
+            do {
+                System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                int codigoPessoaAux = input.nextInt();
+                pessoa = PessoaDAO.buscarPessoasPorId(codigoPessoaAux);
+            } while (pessoa == null);
+
+        } else {
+            pessoa = PessoaDAO.buscarPessoasPorNome(nomePessoaAux);
+            if (pessoa == null) {
+
+                do {
+                    System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                    int codigoPessoaAux = input.nextInt();
+                    pessoa = PessoaDAO.buscarPessoasPorId(codigoPessoaAux);
+                } while (pessoa == null);
+
+            }
+        }
+
+        System.out.print("\n\nDigite o novo nome da pessoa: ");
+        String nomePessoa = input.nextLine();
+        System.out.print("\nDigite a nova descrição da pessoa: ");
+        String descricaoPessoa = input.nextLine();
+
+        pessoa.setNome_pessoa(nomePessoa);
+
+        PessoaDAO.cadastrarPessoa(pessoa);
+    }
+
+     public static void deletarPessoa() {
+
+        Pessoa pessoa = new Pessoa();
+
+        System.out.print("\n\nDigite o id da pessoa que deseja deletar: ");
+        int idPessoa = input.nextInt();
+
+        pessoa.setId_pessoa(idPessoa);
+
+        PessoaDAO.excluirPessoa(idPessoa);
+    }
+    public static void listarPessoas() {
+
+        Pessoa pessoa = new Pessoa();
+
+        PessoaDAO.listarPessoas();
+
+        System.out.print("\n\nDigite o nome da pessoa que deseja pesquisar ou deixe esse campo em branco caso queira pesquisar pelo código da pessoa: ");
+        input.skip("\\R");
+        String nomePessoaAux = input.nextLine();
+
+        if (nomePessoaAux.equals("")) {
+
+            do {
+                System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                int codigoPessoaAux = input.nextInt();
+                pessoa = PessoaDAO.buscarProfissoesPorId(codigoPessoaAux);
+            } while (pessoa == null);
+
+        } else {
+            pessoa = PessoaDAO.buscarProfissoesPorNome(nomePessoaAux);
+            if (pessoa == null) {
+
+                do {
+                    System.out.print("\n\nDigite o código da pessoa que deseja alterar: ");
+                    int codigoPessoaAux = input.nextInt();
+                    pessoa = PessoaDAO.buscarProfissoesPorId(codigoPessoaAux);
+                } while (pessoa == null);
+
+            }
+        }
+
+        System.out.println("Para continuar, digite a proxima opcao desejada");
+        escolher();
+    }
+
 }
