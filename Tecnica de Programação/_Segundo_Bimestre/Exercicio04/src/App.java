@@ -45,7 +45,7 @@ public class App {
                     break;
 
                 case 8:
-                    
+                        listarPessoas();
                     break;
 
                 case 9:
