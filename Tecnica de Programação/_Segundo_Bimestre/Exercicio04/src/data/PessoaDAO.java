@@ -9,7 +9,7 @@ import model.Pessoa;
 
 public class PessoaDAO {
 
-    public static void cadastrarProfissao(Pessoa pessoa) {
+    public static void cadastrarPessoa(Pessoa pessoa) {
 
         String sql = "INSERT INTO pessoas (nome_pessoa, id_lista_de_profissao_fk, id_lista_de_telefones_fk) VALUES (?, ?, ?);";
 
