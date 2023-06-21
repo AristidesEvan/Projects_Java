@@ -8,21 +8,17 @@ import connection.Conexao;
 import model.Profissao;
 
 public class ProfissaoDAO {
+    private static String sql;
 
     public static void cadastrarProfissao(Profissao profissao) {
 
-        String sql = "INSERT INTO profissoes (nome_profissao, descricao) VALUES (?, ?);";
+        sql = "INSERT INTO profissoes (nome_profissao, descricao) VALUES (?, ?);";
 
-        PreparedStatement ps = null;
-
-        try {
-
-            ps = Conexao.getConexao().prepareStatement(sql);
+        try (PreparedStatement ps = Conexao.getConexao().prepareStatement(sql)) {
             ps.setString(1, profissao.getNomeProfissao());
             ps.setString(2, profissao.getDescricaoProfissao());
 
             int rowsAffected = ps.executeUpdate();
-            ps.close();
 
             if (rowsAffected > 0) {
                 System.out.println(rowsAffected);
@@ -30,9 +26,8 @@ public class ProfissaoDAO {
             } else {
                 System.out.println("Nenhum registro inserido!");
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+             e.printStackTrace();
         }
 
     }
@@ -56,7 +51,7 @@ public class ProfissaoDAO {
 
                 System.out.println("ID: " + id + ", Nome: " + nome + ", Descrição: " + descricao);
             }
-
+            
             ps.close();
 
         } catch (SQLException e) {

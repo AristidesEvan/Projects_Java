@@ -2,13 +2,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import javax.swing.JOptionPane;
+// import javax.swing.JOptionPane;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception { 
 
         Path caminho;
-        caminho = Paths.get("C:/Users/aristides/Desktop/liguicinha.txt");
+        caminho = Paths.get("C:/Users/arist/Desktop/liguicinha.txt"); // Pega o caminho do arquivo;
 
         String textoEmString = "";
 
@@ -24,13 +24,13 @@ public class App {
         Tratamento valor = new Tratamento(textoEmString);
         valor.tratar();
         
-        String titulo = "LISTA DE FUNCIOÁRIOS";
-        JOptionPane.showMessageDialog(
-            null, 
-            valor.getFuncionariosFormatados(), 
-            titulo, 
-            1 
-        );
+        // String titulo = "LISTA DE FUNCIOÁRIOS";
+        // JOptionPane.showMessageDialog(
+        //     null, 
+        //     valor.getFuncionariosFormatados(), 
+        //     titulo, 
+        //     1 
+        // );
 
         System.out.println(valor.getFuncionariosFormatados());
 

@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 
 public class Controle {
     private ArrayList<Jogador> jogadores = new ArrayList<>();
-    private int numeroDeJogadasPorJogadores; // Deixar static para jogador
-    private int[] intervaloDoNumeroSortido; // Deixar static para jogador]
+    private int numeroDeJogadasPorJogadores; 
+    private int[] intervaloDoNumeroSortido; 
     private int numeroDePalpites;
     private int numeroSortido;
 
     public void iniciaJogo() {
-        this.numeroDeJogadasPorJogadores = definirQntDeJogadores();
+        this.numeroDeJogadasPorJogadores = definirQntDeJogadores(); //
 
         for (int i = 0; i < numeroDeJogadasPorJogadores; i++) {
             Jogador jogador = new Jogador(gerarStringAleatoria(10)); 
@@ -23,7 +23,7 @@ public class Controle {
 
         this.numeroDePalpites = definirQntDePalpites(this.intervaloDoNumeroSortido);
 
-        for (int i = 0; i < this.jogadores.size(); i++) {
+        for (int i = 0; i < this.jogadores.size(); i++) { // Faz todos os jogadores palpitarem;
             this.jogadores.get(i).palpitar(this.intervaloDoNumeroSortido, this.numeroDePalpites);
         }
 
@@ -32,6 +32,7 @@ public class Controle {
         definirPossiveisGanhadores(this.jogadores, this.numeroSortido);
     }
 
+    // Gera o "nome" do jogador;
     public static String gerarStringAleatoria(int tamanho) {
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
@@ -44,6 +45,7 @@ public class Controle {
         return sb.toString();
     }
 
+    // Pergunta ao usuário a quantidade de jogadores;
     public static int definirQntDeJogadores() {
         int numeroDeJogadores = 0;
         String input = "";
@@ -73,6 +75,7 @@ public class Controle {
         return numeroDeJogadores;
     }
 
+    // Define o intervalo do numero a ser sortido;
     public static int[] definirIntervaloDoNumeroSortido() {
         int[] intervalo = new int[2];
         String input = "";
@@ -111,21 +114,22 @@ public class Controle {
         return intervalo;
     }
 
+    // Pergunta ao usuário a quantidade de palpites por jogador;
     public static int definirQntDePalpites(int[] intervalo) {
         int numeroDePalpites = 0;
         String input = "";
         int flag = 1;
 
-        int limitador = (intervalo[1] - intervalo[0] + 1);
+        int limitador = (intervalo[1] - intervalo[0] + 1); // Define quantidade de opções;
 
         while (flag == 1) {
             try {
                 int aux = 0;
                 flag++;
-                if (limitador < 4) {aux = limitador;} else { aux = 4;}
+                if (limitador < 4) {aux = limitador;} else { aux = 4;} // limita a quantidade de palpites a ser escolhida;
                 input = JOptionPane.showInputDialog(null, "Digite a quantidade de palpites! (Números inteiros) (Mínimo de 1 e máximo de "+aux+")", "Quantidade de jogadores", 1);
                 
-                while(Integer.parseInt(input) < 1 || Integer.parseInt(input) > aux) {
+                while(Integer.parseInt(input) < 1 || Integer.parseInt(input) > aux) { // Verifica se o valor é valido e pede para colocar outrovalor caso não seja válido;
                     JOptionPane.showMessageDialog(null, "Erro de entrada, digite um valor válido! (Números inteiros) (Mínimo de 1 e máximo de "+aux+")", "Erro de entrada!", 0);
 
                     input = JOptionPane.showInputDialog(null, "Digite a quantidade de palpites! (Números inteiros) (Mínimo de 1 e máximo de "+aux+")", "Quantidade de jogadores", 1);
@@ -142,6 +146,7 @@ public class Controle {
         return numeroDePalpites;
     }
 
+    // Define o número sortido;
     public int definirNumeroSortido(int[] intervalo) {
         int numeroSortido = 0;
 
@@ -152,6 +157,7 @@ public class Controle {
         return numeroSortido;
     }
 
+    // Define possiveis ganhadores; (verifica quem acertou o número sortido)
     public void definirPossiveisGanhadores(ArrayList<Jogador> jogadores, int numeroSortido) {
         String possiveisGanhadores = "NÚMERO SORTIDO: "+numeroSortido+"\n\n";
 
