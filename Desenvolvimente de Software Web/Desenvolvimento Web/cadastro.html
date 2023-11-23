@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <div>
+            <a href="index.html">Inicio!</a>
+        </div>
+
+        <form class="cadastro-form" action="dadosrecebidos.html">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br><br>
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            
+            <label>Gênero:</label>
+            <div>
+                <input type="radio" id="masculino" name="genero" value="Masculino" required>
+                <label for="masculino">Masculino</label>
+            </div>
+            <div>
+                <input type="radio" id="feminino" name="genero" value="Feminino" required>
+                <label for="feminino">Feminino</label>
+            </div>
+            <div>
+                <input type="radio" id="outro" name="genero" value="Outro" required>
+                <label for="outro">Outro</label>
+            </div>
+            
+            <br><br>
+            
+            <label for="pais">País:</label>
+            <select id="pais" name="pais">
+                <option value="Brasil">Brasil</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="Canadá">Canadá</option>
+                <option value="Reino Unido">Reino Unido</option>
+            </select>
+            <br><br>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50"></textarea>
+            <br><br>
+            
+            <label>Interesses:</label>
+            <div>
+                <input type="checkbox" id="esporte" name="interesses[]" value="Esporte">
+                <label for="esporte">Esporte</label>
+            </div>
+            <div>
+                <input type="checkbox" id="tecnologia" name="interesses[]" value="Tecnologia">
+                <label for="tecnologia">Tecnologia</label>
+            </div>
+            <div>
+                <input type="checkbox" id="viagem" name="interesses[]" value="Viagem">
+                <label for="viagem">Viagem</label>
+            </div>
+            <div>
+                <input type="checkbox" id="comida" name="interesses[]" value="Comida">
+                <label for="comida">Comida</label>
+            </div>
+            
+            <br><br>
+
+            <button class="btn-enviar" type="submit">Enviar dados!</button>
+        </form>
+    </div>
+</body>
+</html>

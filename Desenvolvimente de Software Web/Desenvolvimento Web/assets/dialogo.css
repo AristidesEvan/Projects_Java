@@ -1,0 +1,35 @@
+/* Estilos para a caixa de diálogo */
+.caixa-dialogo {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Estilos para o botão de fechar */
+.fechar {
+    background-color: #102B8C;
+    padding: 2px 8px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.imitaLink {
+    cursor: pointer;
+    height: 8rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    text-decoration: none;
+    background-color: #1839B1;
+}
+
+.imitaLink:hover {
+    background-color: #102B8C;
+}
