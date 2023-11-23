@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="index.html">Início!</a>
+        
+        <div class="imitaLink" onclick="mostrarDialog()">Diálogo!</div>
+
+        <dialog id="dialog_id" class="caixa-dialogo">
+            <span class="fechar" onclick="fecharCaixa()">X</span>
+            <br/>
+            <br/>
+            <h2>Mensagem:</h2>
+            <br/>
+            <p>A vida irrefletida não vale a pena ser vivida - Sócrates</p>
+        </dialog>
+    
+        <script>
+            function fecharCaixa() {
+                var caixaDialogo = document.querySelector("#dialog_id");
+                caixaDialogo.close();
+            }
+
+            function mostrarDialog() {
+                let modal = document.querySelector("#dialog_id");
+                modal.showModal(); 
+                return
+            }
+        </script>
+    </div>
+    
+</body>
+</html>

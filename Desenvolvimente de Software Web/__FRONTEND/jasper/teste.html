@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Consumo de API PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #pdf-container {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplo de Consumo de API PDF</h1>
+        <button id="load-pdf">Carregar PDF</button>
+        <div id="pdf-container"></div>
+    </div>
+
+    <script>
+        const loadPdfButton = document.getElementById('load-pdf');
+        const pdfContainer = document.getElementById('pdf-container');
+
+        loadPdfButton.addEventListener('click', () => {
+            // Faz uma solicitação GET para a API PDF
+            fetch('http://localhost:8080/pdf')
+                .then(response => {
+                    if (response.ok) {
+                        return response.blob();
+                    } else {
+                        throw new Error('Erro ao carregar o PDF');
+                    }
+                })
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    pdfContainer.innerHTML = `<embed src="${url}" type="application/pdf" width="100%" height="100%">`;
+                })
+                .catch(error => {
+                    console.error(error);
+                    pdfContainer.innerHTML = '<p>Erro ao carregar o PDF.</p>';
+                });
+        });
+    </script>
+</body>
+</html>
